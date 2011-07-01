@@ -6,6 +6,10 @@ The general idea of this is that to authenticate users on the network, they will
 
 When used, the user will be prompted for their username and password that they will use to authenticate to the database.  If the username is left blank, it will use the name of the user given at login.  For example, if person A were to log into a system with the username of "hellosally", and the user didn't supply a username to the prompt for the module, then the module will use "hellosally" for the database username.  However, empty passwords are not supported, as this also meant to be a secure module as well (as much as it can be at least).
 
+CHECKSUMS
+=====================================
+MD5 checksums are available.  They will be found in the "md5_checksums" file inside of "support/".
+
 LICENSE
 =====================================
 Please see LICENSE.
