@@ -78,17 +78,21 @@ KNOWN ISSUES
 =======================================
 - You must be root to install this...not something I'm going to fix either, its a permissions (read: security) issue.
 
+REPORTING ISSUES
+=======================================
+If you run into any bugs or anything, please post them on the GitHub page (https://github.com/ehzor/pam_mongodb).  I personally 
+prefer keeping a centralized database of information for projects, and this will help other users as well.  E-mails asking for 
+support will be sent a link to the bug tracker on GitHub.
+
 CONTACT
 =======================================
-If you wish to contact me, for any reason, you can do so via e-mail: eric@zorveo.com
-
-I'll get to every e-mail I can, I just can't guarantee the most speediest response.  Legit support questions will be highest 
-priority though.
+If you wish to contact me, for any non-support reason, you can do so via e-mail: eric@zorveo.com, or on Zorveo Community: http://www.zorveo.com/community/
 
 OFFICIAL SITES
 =======================================
 Basically, if you don't see this code hosted on either of the following sites:
-http://code.google.com/p/pam-mongodb/
+http://code.google.com/p/pam-mongodb/ [defunct, but is official]
+https://github.com/ehzor/pam_mongodb
 http://zorveo.com/
 
 Its not from an official source.
