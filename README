@@ -2,14 +2,9 @@ INTRODUCTION
 =====================================
 pam-mongodb is a PAM module for Linux systems to authenticate a user via mongoDB database, released by Zorveo Research.
 
-The general idea of this is that to authenticate users on the network, they will have to have a valid account
-to a database on the mongoDB server.
+The general idea of this is that to authenticate users on the network, they will have to have a valid account to a database on the mongoDB server.
 
-When used, the user will be prompted for their username and password that they will use to authenticate to the database.
-If the username is left blank, it will use the name of the user given at login.  For example, if person A were to log into
-a system with the username of "hellosally", and the user didn't supply a username to the prompt for the module, then the 
-module will use "hellosally" for the database username.  However, empty passwords are not supported, as this also meant to be
-a secure module as well (as much as it can be at least).
+When used, the user will be prompted for their username and password that they will use to authenticate to the database.  If the username is left blank, it will use the name of the user given at login.  For example, if person A were to log into a system with the username of "hellosally", and the user didn't supply a username to the prompt for the module, then the module will use "hellosally" for the database username.  However, empty passwords are not supported, as this also meant to be a secure module as well (as much as it can be at least).
 
 LICENSE
 =====================================
@@ -17,41 +12,28 @@ Please see LICENSE.
 
 INFORMATION
 =====================================
-This was done more so as a proof of concept to myself more than anything.  I haven't seen a PAM
-module for this yet, and figured one should be released.  The only thing that I ask is that you submit any 
-reports to me (via Google Code), or by e-mailing me at eric@zorveo.com.  Also, feel free to e-mail me any 
-criticisms (good or bad), or anything else you feel like.
+This was done more so as a proof of concept to myself more than anything.  I haven't seen a PAM module for this yet, and figured one should be released.  The only thing that I ask is that you submit any reports to me (via Google Code), or by e-mailing me at eric@zorveo.com.  Also, feel free to e-mail me any criticisms (good or bad), or anything else you feel like.
 
 I'm releasing this to the world as-is.  I tested this on my system, but I can't guarantee it will work on others.
 
-Source code is released for study, improvements, etc...  I believe in the open-source nature of the world.  I'm sure in due time
-my code will be named as someone else's.  It's the nature of open-source.  I figure it this way, though...if my code helped someone,
-even to do an "unethical" action, then it must've been that good.
+Source code is released for study, improvements, etc...  I believe in the open-source nature of the world.  I'm sure in due time my code will be named as someone else's.  It's the nature of open-source.  I figure it this way, though...if my code helped someone, even to do an "unethical" action, then it must've been that good.
 
 HOW TO USE
 =====================================
-If you already meet the requirements of pre-installed software (they MUST be installed prior to using), you can copy the 
-module to /lib/security, make sure you chmod +x it first though to be safe.  After that, skip the next paragraph.  If you 
-need to compile the code, though, continue reading.
+If you already meet the requirements of pre-installed software (they MUST be installed prior to using), you can copy the module to /lib/security, make sure you chmod +x it first though to be safe.  After that, skip the next paragraph.  If you need to compile the code, though, continue reading.
 
-To compile, simply run the "build" script.  This will do all the work for you.  Once compiled and installed (default path 
-is /lib/security/, which is where most PAM modules are stored), you well edit any of the systems that use PAM.  Usually these 
-files are found in /etc/pam.d, but I can't gurantee it's that way on every system.
+To compile, simply run the "build" script.  This will do all the work for you.  Once compiled and installed (default path is /lib/security/, which is where most PAM modules are stored), you well edit any of the systems that use PAM.  Usually these files are found in /etc/pam.d, but I can't gurantee it's that way on every system.
 
 Now, until you know this works, I'd suggest the following line be placed at the top of the service file (i.e.: /etc/pam.d/sshd):
 auth optional pam_mongodb.so server=<servername> db=<db name>
 
-However, replace <servername> with the actual server IP or host (i.e.: server=10.0.0.5), and same with the db the user should authenticate to.
-Also, add port=... if the mongoDB listens on a non-standard (27107) port.
+However, replace <servername> with the actual server IP or host (i.e.: server=10.0.0.5), and same with the db the user should authenticate to.  Also, add port=... if the mongoDB listens on a non-standard (27107) port.
 
-This makes the module active, but isn't mandatory to be successful authentication.  When you can verify it works, then
-replace "optional" with "required" or "requisite".  If you want this to be the only authentication method, then comment out
-(put a "#" withou the quotes in front of) each line that begins with "auth".
+This makes the module active, but isn't mandatory to be successful authentication.  When you can verify it works, then replace "optional" with "required" or "requisite".  If you want this to be the only authentication method, then comment out (put a "#" withou the quotes in front of) each line that begins with "auth".
 
 SUPPORTED MODULE ARGUMENTS
 =====================================
-It is highly suggested to pass arguments (shown above in "HOW TO USE") so it will actually work.  By default, it connects to 
-127.0.0.1:27107, using databae "db".  Here's a full list of supported arguments, with descriptions:
+It is highly suggested to pass arguments (shown above in "HOW TO USE") so it will actually work.  By default, it connects to 127.0.0.1:27107, using databae "db".  Here's a full list of supported arguments, with descriptions:
 
 NAME	-	USAGE			-	Description
 -------------------------------------------------------------------------------------
@@ -80,9 +62,7 @@ KNOWN ISSUES
 
 REPORTING ISSUES
 =======================================
-If you run into any bugs or anything, please post them on the GitHub page (https://github.com/ehzor/pam_mongodb).  I personally 
-prefer keeping a centralized database of information for projects, and this will help other users as well.  E-mails asking for 
-support will be sent a link to the bug tracker on GitHub.
+If you run into any bugs or anything, please post them on the GitHub page (https://github.com/ehzor/pam_mongodb).  I personally prefer keeping a centralized database of information for projects, and this will help other users as well.  E-mails asking for support will be sent a link to the bug tracker on GitHub.
 
 CONTACT
 =======================================
