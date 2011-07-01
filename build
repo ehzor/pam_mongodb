@@ -1,0 +1,10 @@
+#!/bin/sh
+
+gcc -c pam_mongodb.c -o pam_mongodb.o -I/usr/include/mongo-client -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include/ -lmongo-client
+
+ld -G -o /lib/security/pam_mongodb.so pam_mongodb.o -lpam -lmongo-client
+
+rm -rf pam_mongodb.o
+
+# Uncomment the bottom line if you want to use pamtester to test this module out
+#pamtester demo bob authenticate
