@@ -1,0 +1,3 @@
+This folder is for scripts and other resources that have no direct impact on the module itself.
+
+cloc.pl - Tells you how many lines of code exist in a source file
